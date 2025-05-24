@@ -75,7 +75,7 @@
         <img src="../assets/avataaars (7).png" alt="Google Sheet"
           class="mx-auto rounded-full w-32 h-32 mb-4 shadow-lg transition duration-300 group-hover:opacity-70">
         <h3 class="text-xl font-semibold text-gray-800">Ahmad Amr</h3>
-        <p class="text-green-600 mb-2">Google Sheets Specialist</p>
+        <p class="text-green-600 mb-2">Google Sheets Developer</p>
         <div class="flex justify-center gap-4 opacity-0 group-hover:opacity-100 transition duration-300">
           <a href="#"><i class="fab fa-linkedin text-green-600 hover:text-green-800 text-xl"></i></a>
           <a href="#"><i class="fab fa-github text-gray-700 hover:text-black text-xl"></i></a>
