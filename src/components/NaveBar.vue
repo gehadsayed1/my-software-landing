@@ -1,65 +1,44 @@
 <template>
+  <nav class="sticky top-0 z-50 bg-white flex px-4 md:px-10 border-b border-blue-200 md:shadow-lg shadow-2xl items-center justify-between">
+    <!-- Logo -->
+    <div class="text-lg font-bold py-4">
+      <img class="w-28 h-12" src="../assets/logo.png" alt="Logo" />
+    </div>
 
- <nav class="sticky top-0 z-50 bg-white flex px-10 border-b border-blue-200 md:shadow-lg shadow-2xl items-center">
+    <!-- Burger Icon -->
+    <div class="md:hidden text-gray-700 cursor-pointer" @click="toggleMenu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
 
-
-      <div class="text-lg font-bold md:py-0 py-4">
-        <img class="w-30 h-15" src="../assets/logo.png" alt="">
-      </div>
-      <ul class="md:px-2 ml-auto md:flex md:space-x-2 absolute md:relative top-full left-0 right-0">
-        <li>
-          <a href="#home" class=" nav-link flex md:inline-flex p-4 items-center hover:bg-gray-50 hover:text-blue-600">
-            <span>Home</span>
-          </a>
-        </li>
-        <li>
-          <a href="#projects" class="  nav-link flex md:inline-flex p-4 items-center hover:bg-gray-50 hover:text-blue-600">
-            <span>Products</span>
-          </a>
-        </li>
-        <li class="relative parent">
-          <a href="#solutions" class=" nav-link flex justify-between md:inline-flex p-4 items-center hover:bg-gray-50 hover:text-blue-600 space-x-2">
-            <span>Service</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current pt-1" viewBox="0 0 24 24">
-              <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/>
-            </svg>
-          </a>
-          <ul class="child transition duration-300 md:absolute top-full right-0 md:w-48 bg-white md:shadow-lg md:rounded-b">
-            <li>
-              <a href="#" class=" nav-link flex px-4 py-3 hover:bg-gray-50 hover:text-blue-600">Web development</a>
-            </li>
-            <li>
-              <a href="#" class=" nav-link flex px-4 py-3 hover:bg-gray-50 hover:text-blue-600">Web Design</a>
-            </li>
-            <li>
-              <a href="#" class=" nav-link 
-              flex px-4 py-3 hover:bg-gray-50 hover:text-blue-600">Machine Learning</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#about" class=" nav-link flex md:inline-flex p-4 items-center hover:bg-gray-50 hover:text-blue-600">
-            <span>About us</span>
-          </a>
-        </li>
-        <li>
-          <a href="#contact" class=" nav-link flex md:inline-flex p-4 items-center hover:bg-gray-50 hover:text-blue-600">
-            <span>Contact Us</span>
-          </a>
-        </li>
-      </ul>
-      <div class="ml-auto md:hidden text-gray-500 cursor-pointer">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-          <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/>
-        </svg>
-      </div>
-    </nav>
-
- 
-
+    <!-- Menu Items -->
+    <ul :class="['md:flex md:space-x-2 md:static absolute top-full left-0 w-full md:w-auto bg-white md:bg-transparent transition-all duration-300 ease-in-out', isMenuOpen ? 'block' : 'hidden']">
+      <li>
+        <a href="#home" class="nav-link block md:inline-block p-4 hover:text-blue-600">Home</a>
+      </li>
+      <li>
+        <a href="#projects" class="nav-link block md:inline-block p-4 hover:text-blue-600">Products</a>
+      </li>
+      <li>
+        <a href="#solutions" class="nav-link block md:inline-block p-4 hover:text-blue-600">Solutions</a>
+      </li>
+      <li>
+        <a href="#team" class="nav-link block md:inline-block p-4 hover:text-blue-600">Team</a>
+      </li>
+      <li><a href="#about" class="nav-link block md:inline-block p-4 hover:text-blue-600">About Us</a></li>
+      <li><a href="#contact" class="nav-link block md:inline-block p-4 hover:text-blue-600">Contact Us</a></li>
+    </ul>
+  </nav>
 </template>
+
 <script setup>
-import { onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
+
+const isMenuOpen = ref(false);
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
 
 onMounted(() => {
   const sections = document.querySelectorAll("section[id]");
@@ -85,10 +64,16 @@ onMounted(() => {
 });
 </script>
 
-
-
 <style scoped>
-@media only screen and (min-width: 768px) {
+html {
+  scroll-behavior: smooth;
+}
+.nav-link.active {
+  color: #2563eb;
+  font-weight: bold;
+  border-bottom: 2px solid #2563eb;
+}
+@media (min-width: 768px) {
   .parent:hover .child {
     opacity: 1;
     height: auto;
@@ -100,14 +85,7 @@ onMounted(() => {
     height: 0;
     overflow: hidden;
     transform: translateY(-10%);
+    transition: all 0.3s ease;
   }
 }
-.nav-link.active {
-  color: #2563eb;
-  font-weight: bold;
-  border-bottom: 2px solid #2563eb;
-}
-
-
-
 </style>

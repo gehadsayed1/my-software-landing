@@ -13,6 +13,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <!-- Business Consultation -->
           <div
+          data-aos="fade-up"
             class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
           >
             <img
@@ -30,6 +31,7 @@
 
           <!-- Facebook Leads By CRM -->
           <div
+          data-aos="fade-up"
             class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
           >
             <img
@@ -47,6 +49,7 @@
 
           <!-- Web Development -->
           <div
+          data-aos="fade-up"
             class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
           >
             <img
@@ -65,6 +68,7 @@
 
           <!-- Google Systems -->
           <div
+          data-aos="fade-up"
             class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
           >
             <img
@@ -82,6 +86,7 @@
 
           <!-- Tasks Management -->
           <div
+          data-aos="fade-up"
             class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
           >
             <img
@@ -100,6 +105,7 @@
 
           <!-- Smart SMS -->
           <div
+          data-aos="fade-up"
             class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
           >
             <img

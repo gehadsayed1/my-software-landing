@@ -49,7 +49,7 @@
         </div>
       </div>
 
-      <div class="text-center relative group" >
+      <div class="text-center relative group" data-aos="fade-up" >
         <img src="../assets/avataaars (1).png" alt="Flutter Dev"
           class="mx-auto rounded-full w-32 h-32 mb-4 shadow-lg transition duration-300 group-hover:opacity-70">
         <h3 class="text-xl font-semibold text-gray-800">Mohamed Tarek</h3>
@@ -60,7 +60,7 @@
         </div>
       </div>
 
-      <div class="text-center relative group" >
+      <div class="text-center relative group" data-aos="fade-up">
         <img src="../assets/avataaars (4).png" alt="Frontend Dev 2"
           class="mx-auto rounded-full w-32 h-32 mb-4 shadow-lg transition duration-300 group-hover:opacity-70">
         <h3 class="text-xl font-semibold text-gray-800">Sherif Farid</h3>
@@ -71,7 +71,7 @@
         </div>
       </div>
 
-      <div class="text-center relative group" >
+      <div class="text-center relative group" data-aos="fade-up">
         <img src="../assets/avataaars (7).png" alt="Google Sheet"
           class="mx-auto rounded-full w-32 h-32 mb-4 shadow-lg transition duration-300 group-hover:opacity-70">
         <h3 class="text-xl font-semibold text-gray-800">Ahmad Amr</h3>

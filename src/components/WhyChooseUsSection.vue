@@ -14,6 +14,7 @@
         <div class="grid md:grid-cols-3 gap-10">
           <!-- Quality -->
           <div
+          data-aos="flip-right"
             class="bg-white p-8 rounded-full shadow-md hover:shadow-xl transition duration-300 transform hover:rotate-3 text-center"
           >
             <div
@@ -43,6 +44,7 @@
 
           <!-- Deliver Section -->
           <div
+          data-aos="flip-right"
             class="bg-white p-8 rounded-full shadow-md hover:shadow-xl transition duration-300 transform hover:rotate-3 text-center"
           >
             <div
@@ -73,6 +75,7 @@
 
           <!-- Learn -->
           <div
+          data-aos="flip-right"
             class="bg-white p-8 rounded-full shadow-md hover:shadow-xl transition duration-300 transform hover:rotate-3 text-center"
           >
             <div
