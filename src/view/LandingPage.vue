@@ -25,7 +25,7 @@ import TeamSection from "../components/TeamSection.vue";
     <AboutUsSection />
 
     <!-- Solutions Section -->
-    <SolutionsSection id="Solutions"/>
+    <SolutionsSection id="solutions"/>
     <!-- Why Choose Us Section -->
   <WhyChooseUsSection id="Choose"/>
 
