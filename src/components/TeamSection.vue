@@ -52,7 +52,7 @@
       <div class="text-center relative group" data-aos="fade-up" >
         <img src="../assets/avataaars (1).png" alt="Flutter Dev"
           class="mx-auto rounded-full w-32 h-32 mb-4 shadow-lg transition duration-300 group-hover:opacity-70">
-        <h3 class="text-xl font-semibold text-gray-800">Mohamed Tarek</h3>
+        <h3 class="text-xl font-semibold text-gray-800">Mohamed Abdo</h3>
         <p class="text-pink-600 mb-2">Flutter Developer</p>
         <div class="flex justify-center gap-4 opacity-0 group-hover:opacity-100 transition duration-300">
           <a href="#"><i class="fab fa-linkedin text-pink-600 hover:text-pink-800 text-xl"></i></a>
