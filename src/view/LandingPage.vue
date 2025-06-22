@@ -7,7 +7,7 @@ import SolutionsSection from "../components/SolutionsSection.vue";
 import WhyChooseUsSection from "../components/WhyChooseUsSection.vue";
 import ProjectsSection from "../components/ProjectsSection.vue";
 import Navbar from "../components/NaveBar.vue";
-import TeamSection from "../components/TeamSection.vue";
+
 //  
 </script>
 
@@ -32,8 +32,7 @@ import TeamSection from "../components/TeamSection.vue";
     <!-- Projects Section -->
 <ProjectsSection id="projects"/>
 
-    <!-- Team Section -->
-<TeamSection id="team"/>
+  
 
 <!-- Contact Us section -->
 <ContactUssection id="contact"/>
