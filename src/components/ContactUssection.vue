@@ -1,115 +1,125 @@
 <template>
-  <section data-aos="zoom-out-left"  class="contact-section bg-gray-3\200 py-12 px-0  md:px-6   justify-between rounded shadow-lg flex flex-col md:flex-row items-center md:items-start gap-12">
-    
- <!-- component -->
-<div class="flex justify-center items-center   bg-white">
-	<!-- COMPONENT CODE -->
-	<div class="container mx-auto my-4 px-4 lg:px-20">
+  <section class="py-10 dark:bg-gray-100 dark:text-gray-900">
+    <div class="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
 
-		<div class="w-full p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mr-auto rounded-2xl shadow-2xl">
-			<div class="flex">
-				<h1 class="font-bold uppercase text-4xl">Send us a <br /> message</h1>
-			</div>
-			<div class="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5">
-				<input class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-            type="text" placeholder="First Name*" />
-				<input class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-            type="text" placeholder="Last Name*" />
-				<input class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-            type="email" placeholder="Email*" />
-				<input class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-            type="number" placeholder="Phone*" />
-        </div>
-				<div class="my-4">
-					<textarea placeholder="Message*" class="w-full h-32 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
-				</div>
-				<div class="my-2 w-1/2 lg:w-1/4">
-					<button class="uppercase text-sm font-bold tracking-wide bg-primary text-gray-100 p-3 rounded-lg w-full 
-                      focus:outline-none focus:shadow-outline">
-            Send Message
-          </button>
-				</div>
-			</div>
-
-			<div
-				class="w-full lg:-mt-96 lg:w-2/6 px-8 py-12 ml-auto bg-primary rounded-2xl">
-				<div class="flex flex-col text-white">
-					<h1 class="font-bold uppercase text-4xl my-4">Drop in our office</h1>
-					<p class="text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-						tincidunt arcu diam,
-						eu feugiat felis fermentum id. Curabitur vitae nibh viverra, auctor turpis sed, scelerisque ex.
-					</p>
-
-					<div class="flex my-4 w-2/3 lg:w-1/2">
-						<div class="flex flex-col">
-							<i class="fas fa-map-marker-alt pt-2 pr-2" />
-            </div>
-            <div class="flex flex-col">
-              <h2 class="text-2xl">Main Office</h2>
-              <p class="text-gray-400">5555 Tailwind RD, Pleasant Grove, UT 73533</p>
-            </div>
-          </div>
-          
-          <div class="flex my-4 w-2/3 lg:w-1/2">
-            <div class="flex flex-col">
-              <i class="fas fa-phone-alt pt-2 pr-2" />
-            </div>
-            <div class="flex flex-col">
-              <h2 class="text-2xl">Call Us</h2>
-              <p class="text-gray-400">Tel: xxx-xxx-xxx</p>
-              <p class="text-gray-400">Fax: xxx-xxx-xxx</p>
-            </div>
-          </div>
-          
-          <div class="flex my-4 w-2/3 lg:w-1/2">
-            <a href="https://www.facebook.com/ENLIGHTENEERING/" target="_blank" rel="noreferrer" class="rounded-full bg-white h-8 w-8 inline-block mx-1 text-center pt-1">
-              <i class="fab fa-facebook-f text-blue-900" />
-            </a>
-            <a href="https://www.linkedin.com/company/enlighteneering-inc-" target="_blank" rel="noreferrer" class="rounded-full bg-white h-8 w-8 inline-block mx-1 text-center pt-1">
-              <i class="fab fa-linkedin-in text-blue-900" />
-            </a>
-          </div>
+      <!-- Contact Info -->
+      <div class="py-6 md:py-0 md:px-6">
+        <h1 class="text-4xl font-bold">Get in touch</h1>
+        <p class="pt-2 pb-4">Fill in the form to start a conversation</p>
+        <div class="space-y-4">
+          <p class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20"
+              class="w-5 h-5 mr-2 sm:mr-6">
+              <path fill-rule="evenodd"
+                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>Dubai, Deira, Port Said, Golden Business Centre, Office 206</span>
+          </p>
+          <a href="https://wa.me/966567844965" target="_blank" class="flex items-center hover:underline">
+            <i class="fab fa-whatsapp w-5 h-5 mr-2 text-xl "></i>
+            <span>0567844965</span>
+          </a>
+          <p class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20"
+              class="w-5 h-5 mr-2 sm:mr-6">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+            <span>sherifbrooklyn@gmail.com</span>
+          </p>
         </div>
       </div>
+
+      <!-- Contact Form -->
+      <form @submit.prevent="submitForm" class="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
+        <label class="block">
+          <span class="mb-1">Full name</span>
+          <input v-model="form.name" required type="text" placeholder="Leroy Jenkins"
+            class="block w-full rounded-md p-2 shadow-sm focus:ring focus:ring-opacity-75 dark:bg-gray-100" />
+        </label>
+        <label class="block">
+          <span class="mb-1">Email address</span>
+          <input v-model="form.email" required type="email" placeholder="leroy@jenkins.com"
+            class="block w-full rounded-md p-2 shadow-sm focus:ring focus:ring-opacity-75 dark:bg-gray-100" />
+        </label>
+        <label class="block">
+          <span class="mb-1">Message</span>
+          <textarea v-model="form.message" required rows="3"
+            class="block w-full rounded-md shadow p-3 focus:ring focus:ring-opacity-75 dark:bg-gray-100"></textarea>
+        </label>
+
+        <!-- Submit Button with Spinner -->
+        <button type="submit"
+          class="self-center px-10 py-1 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-primary text-white flex items-center justify-center gap-2 w-full">
+          <span v-if="!loading">Submit</span>
+          <span v-else>
+            <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor"
+                d="M4 12a8 8 0 018-8v8z"></path>
+            </svg>
+          </span>
+        </button>
+
+        <!-- Success Message -->
+        <p v-if="success" class="text-green-600 text-center font-semibold">Message sent successfully!</p>
+      </form>
     </div>
-    <!-- COMPONENT CODE -->
-</div>
-
-
   </section>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      form: {
-        name: "",
-        email: "",
-        message: ""
+<script setup>
+import { ref } from 'vue'
+
+const form = ref({
+  name: '',
+  email: '',
+  message: ''
+})
+
+const loading = ref(false)
+const success = ref(false)
+
+const submitForm = async () => {
+  loading.value = true
+  success.value = false
+
+  try {
+    await fetch('https://formsubmit.co/ajax/sherifbrooklyn@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
       },
-      successMessage: ""
-    };
-  },
-  methods: {
-    submitForm() {
-      this.successMessage = `Thank you, ${this.form.name}, your message has been received!`;
-      this.form.name = "";
-      this.form.email = "";
-      this.form.message = "";
-    }
+      body: JSON.stringify({
+        name: form.value.name,
+        email: form.value.email,
+        message: form.value.message
+      })
+    })
+
+    // Reset form + show success
+    form.value = { name: '', email: '', message: '' }
+    success.value = true
+  } catch (err) {
+    alert('Failed to send. Please try again later.')
+  } finally {
+    loading.value = false
   }
-};
+}
 </script>
 
 <style scoped>
-.contact-section {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-@media (min-width: 768px) {
-  .contact-section {
-    min-height: 450px;
-  }
+.bg-primary {
+  background-color: #1e3a8a; /* Example blue */
 }
 </style>
+
+<!-- FontAwesome for WhatsApp -->
+<style>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+</style>
+

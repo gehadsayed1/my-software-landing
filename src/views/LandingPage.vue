@@ -1,12 +1,12 @@
 <script setup>
 import AboutUsSection from "../components/AboutUsSection.vue";
 import ContactUssection from "../components/ContactUssection.vue";
-import Footer from "../components/Footer.vue";
+// import Footer from "../components/Footer.vue";
 import HeroSection from "../components/HeroSection.vue";
 import SolutionsSection from "../components/SolutionsSection.vue";
 import WhyChooseUsSection from "../components/WhyChooseUsSection.vue";
-import ProjectsSection from "../components/ProjectsSection.vue";
-import Navbar from "../components/NaveBar.vue";
+// import ProjectsSection from "../components/ProjectsSection.vue";
+// import Navbar from "../components/NaveBar.vue";
 
 //  
 </script>
@@ -15,7 +15,7 @@ import Navbar from "../components/NaveBar.vue";
   <div class="min-h-screen bg-gray-50 text-gray-800">
     <!-- Header -->
   
-      <Navbar />
+      <!-- <Navbar /> -->
   
 
     <!-- Hero Section -->
@@ -30,14 +30,14 @@ import Navbar from "../components/NaveBar.vue";
   <WhyChooseUsSection id="Choose"/>
 
     <!-- Projects Section -->
-<ProjectsSection id="projects"/>
+<!-- <ProjectsSection id="projects"/> -->
 
   
 
 <!-- Contact Us section -->
 <ContactUssection id="contact"/>
 <!-- Footer -->
-<Footer/>
+<!-- <Footer/> -->
 
 
 

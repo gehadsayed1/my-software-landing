@@ -1,8 +1,8 @@
 <template>
-  <nav class="sticky top-0 z-50 bg-gray-700 flex px-2 md:px-10 border-b border-blue-200 md:shadow-lg shadow-2xl items-center justify-between">
+  <nav class="sticky top-0 z-50 bg-[#EFF6FF] flex px-2 md:px-10 border-b border-blue-200 md:shadow-lg shadow-2xl items-center justify-between">
     <!-- Logo -->
     <div class="text-lg font-bold ">
-      <img class="w-15 " src="../assets/logo1.png" alt="Logo" />
+      <img class="w-10 " @click="router.push('/')" src="../assets/logo1.png" alt="Logo" />
     </div>
 
     <!-- Burger Icon -->
@@ -13,13 +13,11 @@
     </div>
 
     <!-- Menu Items -->
-    <ul :class="['md:flex md:space-x-2 md:static absolute top-full left-0 w-full md:w-auto text-gray-200 md:bg-transparent transition-all duration-300 ease-in-out', isMenuOpen ? 'block' : 'hidden']">
+    <ul :class="['md:flex md:space-x-2 md:static absolute top-full left-0 w-full md:w-auto text-primary md:bg-transparent transition-all duration-300 ease-in-out', isMenuOpen ? 'block' : 'hidden']">
       <li>
         <a href="#home" class="nav-link block md:inline-block p-3 hover:text-primary">Home</a>
       </li>
-      <li>
-        <a href="#projects" class="nav-link block md:inline-block p-3 hover:text-primary">Products</a>
-      </li>
+      
       <li>
         <a href="#solutions" class="nav-link block md:inline-block p-3 hover:text-primary">Solutions</a>
       </li>
@@ -32,6 +30,11 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import { useRouter } from 'vue-router';
+
+
+const router = useRouter()
+
 
 const isMenuOpen = ref(false);
 const toggleMenu = () => {
