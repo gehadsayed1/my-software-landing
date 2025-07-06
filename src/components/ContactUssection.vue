@@ -1,7 +1,7 @@
 <template>
   <section class="py-16 bg-gray-100 text-gray-800" :dir="locale === 'ar' ? 'rtl' : 'ltr'">
     <div class="max-w-6xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-12 bg-white shadow-lg rounded-lg p-8">
-      
+
       <!-- Contact Info -->
       <div class="space-y-6">
         <h2 class="text-4xl font-bold text-primary">{{ $t('contact.title') }}</h2>
@@ -10,7 +10,7 @@
         <div class="space-y-4 text-gray-700">
           <div class="flex items-start gap-4">
             <i class="fas fa-map-marker-alt text-primary text-xl mt-1"></i>
-            <span>دبي، ديرة، ميناء سعيد، مركز الأعمال الذهبي، مكتب 206</span>
+            <span>{{ $t('contact.address') }}</span>
           </div>
           <a href="https://wa.me/966567844965" target="_blank" class="flex items-start gap-4 hover:underline">
             <i class="fab fa-whatsapp text-green-500 text-xl mt-1"></i>
@@ -27,20 +27,35 @@
       <form @submit.prevent="submitForm" class="space-y-5">
         <div>
           <label class="block font-medium mb-1">{{ $t('contact.name') }}</label>
-          <input v-model="form.name" required type="text" :placeholder="$t('contact.placeholderName')"
-            class="w-full rounded-md border-gray-300 p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary" />
+          <input
+            v-model="form.name"
+            required
+            type="text"
+            :placeholder="$t('contact.placeholderName')"
+            class="w-full rounded-md border-gray-300 p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
+          />
         </div>
 
         <div>
           <label class="block font-medium mb-1">{{ $t('contact.email') }}</label>
-          <input v-model="form.email" required type="email" :placeholder="$t('contact.placeholderEmail')"
-            class="w-full rounded-md border-gray-300 p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary" />
+          <input
+            v-model="form.email"
+            required
+            type="email"
+            :placeholder="$t('contact.placeholderEmail')"
+            class="w-full rounded-md border-gray-300 p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
+          />
         </div>
 
         <div>
           <label class="block font-medium mb-1">{{ $t('contact.message') }}</label>
-          <textarea v-model="form.message" required rows="4" :placeholder="$t('contact.placeholderMessage')"
-            class="w-full rounded-md border-gray-300 p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+          <textarea
+            v-model="form.message"
+            required
+            rows="4"
+            :placeholder="$t('contact.placeholderMessage')"
+            class="w-full rounded-md border-gray-300 p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
+          ></textarea>
         </div>
 
         <button
@@ -69,7 +84,7 @@
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 
 const form = ref({
   name: '',
@@ -91,17 +106,13 @@ const submitForm = async () => {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      body: JSON.stringify({
-        name: form.value.name,
-        email: form.value.email,
-        message: form.value.message
-      })
+      body: JSON.stringify(form.value)
     })
 
     form.value = { name: '', email: '', message: '' }
     success.value = true
   } catch (err) {
-    alert('فشل في الإرسال. حاول مرة أخرى لاحقاً.')
+    alert(t('contact.sendFail'))
   } finally {
     loading.value = false
   }
