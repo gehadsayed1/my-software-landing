@@ -5,17 +5,15 @@
     <!-- Content -->
     <div class="w-full md:w-1/2 mt-8 md:mt-0 text-center md:text-left">
       <h2 class="text-2xl md:text-5xl font-bold mb-4 text-primary">
-        Empowering Tomorrow with AI
+        {{ $t('hero.title') }}
       </h2>
       <p class="text-sm md:text-lg text-black font-semibold my-6 px-2 md:px-0 max-w-xl mx-auto md:mx-0">
-        At <strong>AI Brooklyn</strong>, we specialize in cutting-edge artificial intelligence solutions
-        that drive innovation, automation, and smarter digital experiences. From intelligent systems
-        to AI-powered apps, we turn your vision into reality with the power of technology.
+        {{ $t('hero.description') }}
       </p>
       <button
         class="bg-gray-200 shadow-xl mt-5 hover:shadow-2xl rounded-2xl text-primary px-8 py-3 font-semibold hover:bg-gray-100 transition"
       >
-        Discover AI Solutions
+        {{ $t('hero.button') }}
       </button>
     </div>
 
@@ -30,7 +28,10 @@
   </section>
 </template>
 
+
 <script setup>
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 </script>
 <style scoped>

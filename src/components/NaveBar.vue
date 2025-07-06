@@ -1,8 +1,8 @@
 <template>
   <nav class="sticky top-0 z-50 bg-[#EFF6FF] flex px-2 md:px-10 border-b border-blue-200 md:shadow-lg shadow-2xl items-center justify-between">
     <!-- Logo -->
-    <div class="text-lg font-bold ">
-      <img class="w-10 " @click="router.push('/')" src="../assets/logo1.png" alt="Logo" />
+    <div class="text-lg font-bold cursor-pointer">
+      <img class="w-10" @click="router.push('/')" src="../assets/logo1.png" alt="Logo" />
     </div>
 
     <!-- Burger Icon -->
@@ -13,56 +13,75 @@
     </div>
 
     <!-- Menu Items -->
-    <ul :class="['md:flex md:space-x-2 md:static absolute top-full left-0 w-full md:w-auto text-primary md:bg-transparent transition-all duration-300 ease-in-out', isMenuOpen ? 'block' : 'hidden']">
+    <ul
+      :class="[
+        'md:flex md:space-x-2 md:static absolute top-full left-0 w-full md:w-auto text-primary md:bg-transparent transition-all duration-300 ease-in-out',
+        isMenuOpen ? 'block bg-[#EFF6FF]' : 'hidden'
+      ]"
+    >
       <li>
-        <a href="#home" class="nav-link block md:inline-block p-3 hover:text-primary">Home</a>
+        <a href="#home" class="nav-link block md:inline-block p-3 hover:text-primary">
+          {{ t('nav.home') }}
+        </a>
       </li>
-      
       <li>
-        <a href="#solutions" class="nav-link block md:inline-block p-3 hover:text-primary">Solutions</a>
+        <a href="#solutions" class="nav-link block md:inline-block p-3 hover:text-primary">
+          {{ t('nav.solutions') }}
+        </a>
       </li>
-      
-      <li><a href="#about" class="nav-link block md:inline-block p-3 hover:text-primary">About Us</a></li>
-      <li><a href="#contact" class="nav-link block md:inline-block p-3 hover:text-primary">Contact Us</a></li>
+      <li>
+        <a href="#about" class="nav-link block md:inline-block p-3 hover:text-primary">
+          {{ t('nav.about') }}
+        </a>
+      </li>
+      <li>
+        <a href="#contact" class="nav-link block md:inline-block p-3 hover:text-primary">
+          {{ t('nav.contact') }}
+        </a>
+      </li>
     </ul>
+
+    <!-- Language Switch -->
+    <LangSwitcher class="ml-4" />
   </nav>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import LangSwitcher from './LangSwitcher.vue'
+import { useI18n } from 'vue-i18n'
 
-
+const { t } = useI18n()
 const router = useRouter()
+const isMenuOpen = ref(false)
 
-
-const isMenuOpen = ref(false);
 const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value;
-};
+  isMenuOpen.value = !isMenuOpen.value
+}
 
+// Scroll highlight
 onMounted(() => {
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".nav-link");
+  const sections = document.querySelectorAll('section[id]')
+  const navLinks = document.querySelectorAll('.nav-link')
 
-  window.addEventListener("scroll", () => {
-    let current = "";
-
+  window.addEventListener('scroll', () => {
+    let current = ''
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 100;
+      const sectionTop = section.offsetTop - 100
       if (window.scrollY >= sectionTop) {
-        current = section.getAttribute("id");
+        current = section.getAttribute('id')
       }
-    });
+    })
 
     navLinks.forEach((link) => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === `#${current}`) {
-        link.classList.add("active");
+      link.classList.remove('active')
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active')
       }
-    });
-  });
-});
+    })
+  })
+})
 </script>
 
 <style scoped>
@@ -73,20 +92,5 @@ html {
   color: var(--color-primary);
   font-weight: bold;
   border-bottom: 2px solid var(--color-primary);
-}
-@media (min-width: 768px) {
-  .parent:hover .child {
-    opacity: 1;
-    height: auto;
-    overflow: visible;
-    transform: translateY(0);
-  }
-  .child {
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    transform: translateY(-10%);
-    transition: all 0.3s ease;
-  }
 }
 </style>

@@ -1,206 +1,77 @@
 <template>
   <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-6 md:px-12">
-      <!-- Title & Description -->
+      <!-- Title -->
       <div class="text-center mb-12">
-        <h2 class="text-5xl font-bold text-primary mb-2">AI Solutions</h2>
+        <h2 class="text-5xl font-bold text-primary mb-2">
+          {{ $t('business_ai.title') }}
+        </h2>
         <p class="text-lg font-semibold">
-          Empowering businesses through intelligent, data-driven technologies.
+          {{ $t('business_ai.subtitle') }}
         </p>
       </div>
 
-      <!-- Grid of Services -->
+      <!-- Grid of 3 AI Services -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- AI Business Consultation -->
-        <div
-          data-aos="fade-up"
-          class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
-        >
-          <img
-            src="../assets/silustion6.jpg"
-            alt="AI Consultation"
-            class="w-55 h-30 m-auto object-contain mb-4"
-          />
+        <!-- Veo 3 -->
+        <div data-aos="fade-up" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+          <img src="../assets/veo.png" alt="Veo 3 Video AI" class="w-full h-40 m-auto object-cover mb-4" />
           <h3 class="text-xl font-semibold text-gray-800 mb-2">
-            AI Business Consultation
+            {{ $t('business_ai.services.veo.title') }}
           </h3>
           <p class="text-gray-600">
-            Leverage AI strategies to optimize operations, enhance productivity,
-            and gain competitive insights.
+            {{ $t('business_ai.services.veo.desc') }}
           </p>
-
           <button
-            @click="
-              router.push({
-                name: 'ServiceDetails',
-                query: { service: 'ai-consultation' },
-              })
-            "
+            @click="router.push({ name: 'ServiceDetails', query: { service: 'video-ai' } })"
             class="mt-4 text-primary font-medium hover:underline"
           >
-            Learn More →
+            {{ $t('business_ai.services.learn_more') }}
           </button>
         </div>
 
-        <!-- AI-Powered Lead Management -->
-        <div
-          data-aos="fade-up"
-          class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
-        >
-          <img
-            src="../assets/silustion1.jpg"
-            alt="CRM AI Leads"
-            class="w-45 h-30 m-auto object-contain mb-4"
-          />
+        <!-- 1Task -->
+        <div data-aos="fade-up" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+          <img src="../assets/ai1.png" alt="Workspace AI" class="w-full h-40 m-auto object-cover mb-4" />
           <h3 class="text-xl font-semibold text-gray-800 mb-2">
-            AI-Powered Lead Management
+            {{ $t('business_ai.services.task.title') }}
           </h3>
           <p class="text-gray-600">
-            Automate your Facebook leads collection and manage them
-            intelligently using AI-enhanced CRM.
+            {{ $t('business_ai.services.task.desc') }}
           </p>
           <button
-            @click="
-              router.push({
-                name: 'ServiceDetails',
-               query: { service: 'lead-management' }
-,
-              })
-            "
+            @click="router.push({ name: 'ServiceDetails', query: { service: 'workspace-ai' } })"
             class="mt-4 text-primary font-medium hover:underline"
           >
-            Learn More →
+            {{ $t('business_ai.services.learn_more') }}
           </button>
         </div>
 
-        <!-- Smart Web Development -->
-        <div
-          data-aos="fade-up"
-          class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
-        >
-          <img
-            src="../assets/silustion2.jpg"
-            alt="Web AI"
-            class="w-45 h-30 m-auto object-contain mb-4"
-          />
+        <!-- AI Agent -->
+        <div data-aos="fade-up" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+          <img src="../assets/aiagent.png" alt="AI Agent" class="w-full h-40 m-auto object-cover mb-4" />
           <h3 class="text-xl font-semibold text-gray-800 mb-2">
-            AI-Integrated Web Solutions
+            {{ $t('business_ai.services.agent.title') }}
           </h3>
           <p class="text-gray-600">
-            Build intelligent, responsive, and scalable websites and platforms
-            powered by AI logic.
+            {{ $t('business_ai.services.agent.desc') }}
           </p>
           <button
-            @click="
-              router.push({
-                name: 'ServiceDetails',
-                query: { service: 'web-ai' }
-,
-              })
-            "
+            @click="router.push({ name: 'ServiceDetails', query: { service: 'ai-agent' } })"
             class="mt-4 text-primary font-medium hover:underline"
           >
-            Learn More →
-          </button>
-        </div>
-
-        <!-- Google AI Ecosystem -->
-        <div
-          data-aos="fade-up"
-          class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
-        >
-          <img
-            src="../assets/silustion3.png"
-            alt="Google Systems"
-            class="w-45 h-30 m-auto object-contain mb-4"
-          />
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">
-            Google AI Ecosystem
-          </h3>
-          <p class="text-gray-600">
-            Seamlessly integrate your business into Google’s AI-driven tools for
-            smarter workflows and collaboration.
-          </p>
-          <button
-            @click="
-              router.push({
-                name: 'ServiceDetails',
-               query: { service: 'google-ai' }
-,
-              })
-            "
-            class="mt-4 text-primary font-medium hover:underline"
-          >
-            Learn More →
-          </button>
-        </div>
-
-        <!-- Intelligent Task Automation -->
-        <div
-          data-aos="fade-up"
-          class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
-        >
-          <img
-            src="../assets/silustion4.jpg"
-            alt="Task Management"
-            class="w-45 h-30 m-auto object-contain mb-4"
-          />
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">
-            Intelligent Task Automation
-          </h3>
-          <p class="text-gray-600">
-            Manage and automate team tasks using AI to prioritize goals, monitor
-            productivity, and track efficiency.
-          </p>
-          <button
-            @click="
-              router.push({
-                name: 'ServiceDetails',
-             query: { service: 'task-automation' }
-,
-              })
-            "
-            class="mt-4 text-primary font-medium hover:underline"
-          >
-            Learn More →
-          </button>
-        </div>
-
-        <!-- Smart Notification System -->
-        <div
-          data-aos="fade-up"
-          class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
-        >
-          <img
-            src="../assets/silustion5.jpg"
-            alt="Smart SMS"
-            class="w-45 h-30 m-auto object-contain mb-4"
-          />
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">
-            Smart Notification System
-          </h3>
-          <p class="text-gray-600">
-            Keep customers engaged with real-time AI-triggered messages, alerts,
-            and behavior-based communications.
-          </p>
-          <button
-            @click="
-              router.push({
-                name: 'ServiceDetails',
-                query: { service: 'smart-notifications' }
-,
-              })
-            "
-            class="mt-4 text-primary font-medium hover:underline"
-          >
-            Learn More →
+            {{ $t('business_ai.services.learn_more') }}
           </button>
         </div>
       </div>
     </div>
   </section>
 </template>
+
 <script setup>
-import { useRouter } from "vue-router";
-const router = useRouter();
+import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
+
+const router = useRouter()
+const { t } = useI18n()
 </script>

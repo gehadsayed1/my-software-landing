@@ -1,58 +1,53 @@
 <template>
-  <section class="py-10 dark:bg-gray-100 dark:text-gray-900">
-    <div class="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
-
+  <section class="py-16 bg-gray-100 text-gray-800" :dir="locale === 'ar' ? 'rtl' : 'ltr'">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-12 bg-white shadow-lg rounded-lg p-8">
+      
       <!-- Contact Info -->
-      <div class="py-6 md:py-0 md:px-6">
-        <h1 class="text-4xl font-bold">Get in touch</h1>
-        <p class="pt-2 pb-4">Fill in the form to start a conversation</p>
-        <div class="space-y-4">
-          <p class="flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20"
-              class="w-5 h-5 mr-2 sm:mr-6">
-              <path fill-rule="evenodd"
-                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                clip-rule="evenodd"></path>
-            </svg>
-            <span>Dubai, Deira, Port Said, Golden Business Centre, Office 206</span>
-          </p>
-          <a href="https://wa.me/966567844965" target="_blank" class="flex items-center hover:underline">
-            <i class="fab fa-whatsapp w-5 h-5 mr-2 text-xl "></i>
+      <div class="space-y-6">
+        <h2 class="text-4xl font-bold text-primary">{{ $t('contact.title') }}</h2>
+        <p class="text-lg text-gray-600">{{ $t('contact.subtitle') }}</p>
+
+        <div class="space-y-4 text-gray-700">
+          <div class="flex items-start gap-4">
+            <i class="fas fa-map-marker-alt text-primary text-xl mt-1"></i>
+            <span>دبي، ديرة، ميناء سعيد، مركز الأعمال الذهبي، مكتب 206</span>
+          </div>
+          <a href="https://wa.me/966567844965" target="_blank" class="flex items-start gap-4 hover:underline">
+            <i class="fab fa-whatsapp text-green-500 text-xl mt-1"></i>
             <span>0567844965</span>
           </a>
-          <p class="flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20"
-              class="w-5 h-5 mr-2 sm:mr-6">
-              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-            </svg>
+          <div class="flex items-start gap-4">
+            <i class="fas fa-envelope text-primary text-xl mt-1"></i>
             <span>sherifbrooklyn@gmail.com</span>
-          </p>
+          </div>
         </div>
       </div>
 
       <!-- Contact Form -->
-      <form @submit.prevent="submitForm" class="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
-        <label class="block">
-          <span class="mb-1">Full name</span>
-          <input v-model="form.name" required type="text" placeholder="Leroy Jenkins"
-            class="block w-full rounded-md p-2 shadow-sm focus:ring focus:ring-opacity-75 dark:bg-gray-100" />
-        </label>
-        <label class="block">
-          <span class="mb-1">Email address</span>
-          <input v-model="form.email" required type="email" placeholder="leroy@jenkins.com"
-            class="block w-full rounded-md p-2 shadow-sm focus:ring focus:ring-opacity-75 dark:bg-gray-100" />
-        </label>
-        <label class="block">
-          <span class="mb-1">Message</span>
-          <textarea v-model="form.message" required rows="3"
-            class="block w-full rounded-md shadow p-3 focus:ring focus:ring-opacity-75 dark:bg-gray-100"></textarea>
-        </label>
+      <form @submit.prevent="submitForm" class="space-y-5">
+        <div>
+          <label class="block font-medium mb-1">{{ $t('contact.name') }}</label>
+          <input v-model="form.name" required type="text" :placeholder="$t('contact.placeholderName')"
+            class="w-full rounded-md border-gray-300 p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary" />
+        </div>
 
-        <!-- Submit Button with Spinner -->
-        <button type="submit"
-          class="self-center px-10 py-1 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-primary text-white flex items-center justify-center gap-2 w-full">
-          <span v-if="!loading">Submit</span>
+        <div>
+          <label class="block font-medium mb-1">{{ $t('contact.email') }}</label>
+          <input v-model="form.email" required type="email" :placeholder="$t('contact.placeholderEmail')"
+            class="w-full rounded-md border-gray-300 p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary" />
+        </div>
+
+        <div>
+          <label class="block font-medium mb-1">{{ $t('contact.message') }}</label>
+          <textarea v-model="form.message" required rows="4" :placeholder="$t('contact.placeholderMessage')"
+            class="w-full rounded-md border-gray-300 p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="bg-primary hover:bg-blue-800 text-white font-medium py-3 rounded-md w-full flex justify-center items-center gap-2 transition duration-200"
+        >
+          <span v-if="!loading">{{ $t('contact.send') }}</span>
           <span v-else>
             <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
               viewBox="0 0 24 24">
@@ -64,8 +59,7 @@
           </span>
         </button>
 
-        <!-- Success Message -->
-        <p v-if="success" class="text-green-600 text-center font-semibold">Message sent successfully!</p>
+        <p v-if="success" class="text-green-600 font-semibold text-center mt-2">{{ $t('contact.success') }}</p>
       </form>
     </div>
   </section>
@@ -73,6 +67,9 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
 
 const form = ref({
   name: '',
@@ -101,11 +98,10 @@ const submitForm = async () => {
       })
     })
 
-    // Reset form + show success
     form.value = { name: '', email: '', message: '' }
     success.value = true
   } catch (err) {
-    alert('Failed to send. Please try again later.')
+    alert('فشل في الإرسال. حاول مرة أخرى لاحقاً.')
   } finally {
     loading.value = false
   }
@@ -114,12 +110,13 @@ const submitForm = async () => {
 
 <style scoped>
 .bg-primary {
-  background-color: #1e3a8a; /* Example blue */
+  background-color: #1e3a8a;
+}
+.text-primary {
+  color: #1e3a8a;
 }
 </style>
 
-<!-- FontAwesome for WhatsApp -->
 <style>
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 </style>
-
