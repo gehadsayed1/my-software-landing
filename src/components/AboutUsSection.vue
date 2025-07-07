@@ -2,82 +2,52 @@
   <section class="py-10 bg-white" id="about" data-aos="fade-up">
     <div class="container mx-auto px-4 sm:px-6 lg:px-12">
       <div class="text-center mb-12" data-aos="fade-down" data-aos-delay="100">
-        <h3 class="text-3xl sm:text-4xl font-bold text-primary mb-4">About Us</h3>
-        <p class="text-base sm:text-lg font-medium text-gray-700 mb-4">
-          We maximize your profits by integrating the latest technologies with
-          modern business management sciences.
-        </p>
-        <p class="text-sm sm:text-base text-gray-600 font-medium mb-4">
-          We facilitate decision-making through comprehensive reports on your
-          work performance, employees, and secure data management.
-        </p>
-        <p class="text-sm sm:text-base text-gray-600 font-medium">
-          Creating a professional company image for both current and potential
-          customers.
-        </p>
+        <h3 class="text-3xl sm:text-4xl font-bold text-primary mb-4">
+          {{ $t('about.title') }}
+        </h3>
       </div>
 
       <div class="flex flex-col md:flex-row items-center md:items-start gap-10">
         <!-- Text Content -->
         <div class="w-full md:w-1/2" data-aos="fade-right" data-aos-delay="200">
           <h4 class="text-xl sm:text-2xl font-bold mb-8 text-primary">
-            All our systems are:
+            {{ $t('about.subtitle') }}
           </h4>
 
           <div class="grid sm:grid-cols-2 gap-10">
-            <!-- Easy to Use -->
+            <!-- User-Friendly -->
             <div class="flex items-start gap-4" data-aos="fade-up" data-aos-delay="300">
-              <span class="bg-blue-100 p-3 rounded-full text-blue-600">
-                <!-- SVG icon -->
-              </span>
+              <span class="bg-blue-100 p-3 rounded-full text-blue-600">🔧</span>
               <div>
-                <h5 class="font-bold text-gray-800">Easy to use</h5>
-                <p class="text-gray-600 text-md">
-                  We build pretty simple tools and this allows us to take
-                  business and turn them into functional quickly and easily.
-                </p>
+                <h5 class="font-bold text-gray-800">{{ $t('about.items.userFriendly.title') }}</h5>
+                <p class="text-gray-600 text-md">{{ $t('about.items.userFriendly.desc') }}</p>
               </div>
             </div>
 
-            <!-- Powerful -->
+            <!-- AI-Powered -->
             <div class="flex items-start gap-4" data-aos="fade-up" data-aos-delay="400">
-              <span class="bg-purple-100 p-3 rounded-full text-blue-800">
-                <!-- SVG icon -->
-              </span>
+              <span class="bg-purple-100 p-3 rounded-full text-blue-800">⚙️</span>
               <div>
-                <h5 class="font-bold text-gray-800">Powerful</h5>
-                <p class="text-gray-600 text-md">
-                  Our systems work based on Google systems concepts, so feel
-                  the power and modern technology between your hands.
-                </p>
+                <h5 class="font-bold text-gray-800">{{ $t('about.items.powerful.title') }}</h5>
+                <p class="text-gray-600 text-md">{{ $t('about.items.powerful.desc') }}</p>
               </div>
             </div>
 
-            <!-- Cloud Based -->
+            <!-- Cloud -->
             <div class="flex items-start gap-4" data-aos="fade-up" data-aos-delay="500">
-              <span class="bg-green-100 p-3 rounded-full text-green-600">
-                <!-- SVG icon -->
-              </span>
+              <span class="bg-green-100 p-3 rounded-full text-green-600">☁️</span>
               <div>
-                <h5 class="font-bold text-gray-800">Cloud Based</h5>
-                <p class="text-gray-600 text-md">
-                  Internet-based computing that provides shared computer
-                  processing resources.
-                </p>
+                <h5 class="font-bold text-gray-800">{{ $t('about.items.cloud.title') }}</h5>
+                <p class="text-gray-600 text-md">{{ $t('about.items.cloud.desc') }}</p>
               </div>
             </div>
 
-            <!-- One Box -->
+            <!-- Scalable -->
             <div class="flex items-start gap-4" data-aos="fade-up" data-aos-delay="600">
-              <span class="bg-yellow-100 p-3 rounded-full text-yellow-600">
-                <!-- SVG icon -->
-              </span>
+              <span class="bg-yellow-100 p-3 rounded-full text-yellow-600">📈</span>
               <div>
-                <h5 class="font-bold text-gray-800">One Box</h5>
-                <p class="text-gray-600 text-md">
-                  All you need in one place, run multiple businesses in one
-                  account.
-                </p>
+                <h5 class="font-bold text-gray-800">{{ $t('about.items.scalable.title') }}</h5>
+                <p class="text-gray-600 text-md">{{ $t('about.items.scalable.desc') }}</p>
               </div>
             </div>
           </div>
@@ -91,3 +61,7 @@
     </div>
   </section>
 </template>
+<script setup>
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+</script>

@@ -1,115 +1,133 @@
 <template>
-  <section data-aos="zoom-out-left"  class="contact-section bg-gray-3\200 py-12 px-0  md:px-6   justify-between rounded shadow-lg flex flex-col md:flex-row items-center md:items-start gap-12">
-    
- <!-- component -->
-<div class="flex justify-center items-center   ">
-	<!-- COMPONENT CODE -->
-	<div class="container mx-auto my-4 px-4 lg:px-20">
+  <section class="py-16 bg-gray-100 text-gray-800" :dir="locale === 'ar' ? 'rtl' : 'ltr'">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-12 bg-white shadow-lg rounded-lg p-8">
 
-		<div class="w-full p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mr-auto rounded-2xl shadow-2xl">
-			<div class="flex">
-				<h1 class="font-bold uppercase text-4xl">Send us a <br /> message</h1>
-			</div>
-			<div class="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5">
-				<input class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-            type="text" placeholder="First Name*" />
-				<input class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-            type="text" placeholder="Last Name*" />
-				<input class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-            type="email" placeholder="Email*" />
-				<input class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-            type="number" placeholder="Phone*" />
-        </div>
-				<div class="my-4">
-					<textarea placeholder="Message*" class="w-full h-32 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
-				</div>
-				<div class="my-2 w-1/2 lg:w-1/4">
-					<button class="uppercase text-sm font-bold tracking-wide bg-primary text-gray-100 p-3 rounded-lg w-full 
-                      focus:outline-none focus:shadow-outline">
-            Send Message
-          </button>
-				</div>
-			</div>
+      <!-- Contact Info -->
+      <div class="space-y-6">
+        <h2 class="text-4xl font-bold text-primary">{{ $t('contact.title') }}</h2>
+        <p class="text-lg text-gray-600">{{ $t('contact.subtitle') }}</p>
 
-			<div
-				class="w-full lg:-mt-96 lg:w-2/6 px-8 py-12 ml-auto bg-primary rounded-2xl">
-				<div class="flex flex-col text-white">
-					<h1 class="font-bold uppercase text-4xl my-4">Drop in our office</h1>
-					<p class="text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-						tincidunt arcu diam,
-						eu feugiat felis fermentum id. Curabitur vitae nibh viverra, auctor turpis sed, scelerisque ex.
-					</p>
-
-					<div class="flex my-4 w-2/3 lg:w-1/2">
-						<div class="flex flex-col">
-							<i class="fas fa-map-marker-alt pt-2 pr-2" />
-            </div>
-            <div class="flex flex-col">
-              <h2 class="text-2xl">Main Office</h2>
-              <p class="text-gray-400">5555 Tailwind RD, Pleasant Grove, UT 73533</p>
-            </div>
+        <div class="space-y-4 text-gray-700">
+          <div class="flex items-start gap-4">
+            <i class="fas fa-map-marker-alt text-primary text-xl mt-1"></i>
+            <span>{{ $t('contact.address') }}</span>
           </div>
-          
-          <div class="flex my-4 w-2/3 lg:w-1/2">
-            <div class="flex flex-col">
-              <i class="fas fa-phone-alt pt-2 pr-2" />
-            </div>
-            <div class="flex flex-col">
-              <h2 class="text-2xl">Call Us</h2>
-              <p class="text-gray-400">Tel: xxx-xxx-xxx</p>
-              <p class="text-gray-400">Fax: xxx-xxx-xxx</p>
-            </div>
-          </div>
-          
-          <div class="flex my-4 w-2/3 lg:w-1/2">
-            <a href="https://www.facebook.com/ENLIGHTENEERING/" target="_blank" rel="noreferrer" class="rounded-full bg-white h-8 w-8 inline-block mx-1 text-center pt-1">
-              <i class="fab fa-facebook-f text-blue-900" />
-            </a>
-            <a href="https://www.linkedin.com/company/enlighteneering-inc-" target="_blank" rel="noreferrer" class="rounded-full bg-white h-8 w-8 inline-block mx-1 text-center pt-1">
-              <i class="fab fa-linkedin-in text-blue-900" />
-            </a>
+          <a href="https://wa.me/966567844965" target="_blank" class="flex items-start gap-4 hover:underline">
+            <i class="fab fa-whatsapp text-green-500 text-xl mt-1"></i>
+            <span>0567844965</span>
+          </a>
+          <div class="flex items-start gap-4">
+            <i class="fas fa-envelope text-primary text-xl mt-1"></i>
+            <span>sherifbrooklyn@gmail.com</span>
           </div>
         </div>
       </div>
+
+      <!-- Contact Form -->
+      <form @submit.prevent="submitForm" class="space-y-5">
+        <div>
+          <label class="block font-medium mb-1">{{ $t('contact.name') }}</label>
+          <input
+            v-model="form.name"
+            required
+            type="text"
+            :placeholder="$t('contact.placeholderName')"
+            class="w-full rounded-md border-gray-300 p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+        </div>
+
+        <div>
+          <label class="block font-medium mb-1">{{ $t('contact.email') }}</label>
+          <input
+            v-model="form.email"
+            required
+            type="email"
+            :placeholder="$t('contact.placeholderEmail')"
+            class="w-full rounded-md border-gray-300 p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+        </div>
+
+        <div>
+          <label class="block font-medium mb-1">{{ $t('contact.message') }}</label>
+          <textarea
+            v-model="form.message"
+            required
+            rows="4"
+            :placeholder="$t('contact.placeholderMessage')"
+            class="w-full rounded-md border-gray-300 p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="bg-primary hover:bg-blue-800 text-white font-medium py-3 rounded-md w-full flex justify-center items-center gap-2 transition duration-200"
+        >
+          <span v-if="!loading">{{ $t('contact.send') }}</span>
+          <span v-else>
+            <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor"
+                d="M4 12a8 8 0 018-8v8z"></path>
+            </svg>
+          </span>
+        </button>
+
+        <p v-if="success" class="text-green-600 font-semibold text-center mt-2">{{ $t('contact.success') }}</p>
+      </form>
     </div>
-    <!-- COMPONENT CODE -->
-</div>
-
-
   </section>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      form: {
-        name: "",
-        email: "",
-        message: ""
+<script setup>
+import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { locale, t } = useI18n()
+
+const form = ref({
+  name: '',
+  email: '',
+  message: ''
+})
+
+const loading = ref(false)
+const success = ref(false)
+
+const submitForm = async () => {
+  loading.value = true
+  success.value = false
+
+  try {
+    await fetch('https://formsubmit.co/ajax/sherifbrooklyn@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
       },
-      successMessage: ""
-    };
-  },
-  methods: {
-    submitForm() {
-      this.successMessage = `Thank you, ${this.form.name}, your message has been received!`;
-      this.form.name = "";
-      this.form.email = "";
-      this.form.message = "";
-    }
+      body: JSON.stringify(form.value)
+    })
+
+    form.value = { name: '', email: '', message: '' }
+    success.value = true
+  } catch (err) {
+    alert(t('contact.sendFail'))
+  } finally {
+    loading.value = false
   }
-};
+}
 </script>
 
 <style scoped>
-.contact-section {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.bg-primary {
+  background-color: #1e3a8a;
 }
+.text-primary {
+  color: #1e3a8a;
+}
+</style>
 
-@media (min-width: 768px) {
-  .contact-section {
-    min-height: 450px;
-  }
-}
+<style>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 </style>

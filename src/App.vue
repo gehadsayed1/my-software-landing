@@ -1,11 +1,11 @@
-<script setup>
-import LandingPage from './view/LandingPage.vue';
-
-
-</script>
-
 <template>
-<LandingPage />
+     <NaveBar />
+  <router-view />
+  <Footer/>
 </template>
 
+<script setup>
+import Footer from './components/Footer.vue';
+import NaveBar from './components/NaveBar.vue';
 
+</script>

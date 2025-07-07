@@ -1,69 +1,58 @@
 <template>
-  <footer class="bg-gray-900 text-white py-10 px-6 ">
+  <footer class="bg-gray-900 text-white py-10 px-6">
     <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
       
       <!-- Company Info -->
       <div>
-        <h3 class="text-xl font-semibold mb-4">Our Company</h3>
+        <h3 class="text-xl font-semibold mb-4">AI Brooklyn</h3>
         <p class="text-gray-400 text-sm leading-relaxed">
-          We are committed to delivering quality services and products that make your life easier and better. Join our growing family.
+          {{ $t('footer.companyInfo') }}
         </p>
       </div>
 
-      <!-- Links -->
+      <!-- Quick Links -->
       <div>
-        <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+        <h3 class="text-xl font-semibold mb-4">{{ $t('footer.quickLinks.title') }}</h3>
         <ul class="space-y-2 text-gray-400 text-sm">
-          <li><a href="#" class="hover:text-white transition">Home</a></li>
-          <li><a href="#" class="hover:text-white transition">About Us</a></li>
-          <li><a href="#" class="hover:text-white transition">Services</a></li>
-          <li><a href="#" class="hover:text-white transition">Contact</a></li>
+          <li><a href="#" class="hover:text-white transition">{{ $t('nav.home') }}</a></li>
+          <li><a href="#about" class="hover:text-white transition">{{ $t('nav.about') }}</a></li>
+          <li><a href="#solutions" class="hover:text-white transition">{{ $t('nav.solutions') }}</a></li>
+          <li><a href="#contact" class="hover:text-white transition">{{ $t('nav.contact') }}</a></li>
         </ul>
       </div>
 
       <!-- Services -->
       <div>
-        <h3 class="text-xl font-semibold mb-4">Our Services</h3>
+        <h3 class="text-xl font-semibold mb-4">{{ $t('footer.services.title') }}</h3>
         <ul class="space-y-2 text-gray-400 text-sm">
-          <li><a href="#" class="hover:text-white transition">Web Development</a></li>
-          <li><a href="#" class="hover:text-white transition">UI/UX Design</a></li>
-          <li><a href="#" class="hover:text-white transition">Machine Learning</a></li>
+          <li><a href="#" class="hover:text-white transition">{{ $t('footer.services.consultation') }}</a></li>
+          <li><a href="#" class="hover:text-white transition">{{ $t('footer.services.crm') }}</a></li>
+          <li><a href="#" class="hover:text-white transition">{{ $t('footer.services.web') }}</a></li>
         </ul>
       </div>
 
-      <!-- Social & Contact -->
+      <!-- Contact -->
       <div>
-        <h3 class="text-xl font-semibold mb-4">Connect with Us</h3>
-        <div class="flex space-x-4 mb-4">
-          <a href="#" class="hover:text-blue-400 transition">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" class="hover:text-blue-400 transition">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#" class="hover:text-pink-500 transition">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="#" class="hover:text-blue-300 transition">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </div>
-        <p class="text-gray-400 text-sm">Email: support@company.com</p>
-        <p class="text-gray-400 text-sm">Phone: +123 456 7890</p>
+        <h3 class="text-xl font-semibold mb-4">{{ $t('footer.contact.title') }}</h3>
+        <p class="text-gray-400 text-sm">{{ $t('footer.contact.email') }}: sherifbrooklyn@gmail.com</p>
+        <a href="https://wa.me/966567844965" target="_blank" class="flex items-center mt-2 hover:underline">
+          <i class="fab fa-whatsapp w-5 h-5 mr-2 sm:mr-4 text-xl"></i>
+          <span>0567844965</span>
+        </a>
       </div>
     </div>
 
     <div class="text-center text-gray-500 text-sm mt-10 border-t border-gray-700 pt-6">
-      &copy; 2025 Company Name. All rights reserved.
+      &copy; 2025 AI Brooklyn. {{ $t('footer.rights') }}
     </div>
   </footer>
 </template>
 
-<!-- Font Awesome CDN (for icons) -->
+
 <script setup>
-// تأكد من استدعاء fontawesome لو مش موجود
+// Font Awesome is already imported below
 </script>
 
 <style scoped>
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
 </style>
