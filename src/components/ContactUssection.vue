@@ -1,133 +1,154 @@
 <template>
-  <section class="py-16 bg-gray-100 text-gray-800" :dir="locale === 'ar' ? 'rtl' : 'ltr'">
-    <div class="max-w-6xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-12 bg-white shadow-lg rounded-lg p-8">
+  <section class="bg-orange-50 py-20">
+    <div class="container mx-auto px-6">
+      <!-- Title -->
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-extrabold text-indigo-900 mb-4">
+          Get in touch!
+        </h2>
+        <p class="text-gray-600 text-lg">
+          Contact us for a quote, help or to join the team.
+        </p>
+      </div>
 
       <!-- Contact Info -->
-      <div class="space-y-6">
-        <h2 class="text-4xl font-bold text-primary">{{ $t('contact.title') }}</h2>
-        <p class="text-lg text-gray-600">{{ $t('contact.subtitle') }}</p>
-
-        <div class="space-y-4 text-gray-700">
-          <div class="flex items-start gap-4">
-            <i class="fas fa-map-marker-alt text-primary text-xl mt-1"></i>
-            <span>{{ $t('contact.address') }}</span>
+      <div
+        class="flex flex-col md:flex-row justify-center items-center gap-6 mb-14"
+      >
+        <div
+          class="flex flex-col items-center text-center p-6 rounded-xl bg-white shadow hover:shadow-lg transition"
+        >
+          <div class="text-primary text-2xl mb-2">
+            <i class="fas fa-map-marker-alt"></i>
           </div>
-          <a href="https://wa.me/966567844965" target="_blank" class="flex items-start gap-4 hover:underline">
-            <i class="fab fa-whatsapp text-green-500 text-xl mt-1"></i>
-            <span>0567844965</span>
-          </a>
-          <div class="flex items-start gap-4">
-            <i class="fas fa-envelope text-primary text-xl mt-1"></i>
-            <span>sherifbrooklyn@gmail.com</span>
+          <p class="text-gray-800">102 Street 2714 Don</p>
+        </div>
+        <div
+          class="flex flex-col items-center text-center p-6 rounded-xl bg-white shadow-lg border-2 border-primary"
+        >
+          <div class="text-primary text-2xl mb-2">
+            <i class="fas fa-phone-alt"></i>
           </div>
+          <p class="text-gray-800 cursor-pointer">+02 1234 567</p>
+        </div>
+        <div
+          class="flex flex-col items-center text-center p-6 rounded-xl bg-white shadow hover:shadow-lg transition"
+        >
+          <div class="text-primary text-2xl mb-2">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <p class="text-gray-800">hello@flowbase.com</p>
         </div>
       </div>
 
       <!-- Contact Form -->
-      <form @submit.prevent="submitForm" class="space-y-5">
-        <div>
-          <label class="block font-medium mb-1">{{ $t('contact.name') }}</label>
-          <input
-            v-model="form.name"
-            required
-            type="text"
-            :placeholder="$t('contact.placeholderName')"
-            class="w-full rounded-md border-gray-300 p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
-          />
-        </div>
+      <div class="max-w-4xl mx-auto bg-white rounded-2xl p-8">
+        <form @submit.prevent="submitForm">
+          <div class=" ">
+            <div class="grid md:grid-cols-2 gap-6">
+              <!-- Name -->
+              <div>
+                <label class="block text-gray-700 font-semibold mb-1"
+                  >Your Name</label
+                >
+                <div class="relative">
+                  <i
+                    class="fas fa-user absolute top-3.5 left-4 text-gray-400"
+                  ></i>
+                  <input
+                    v-model="form.name"
+                    type="text"
+                    required
+                    placeholder="Your Name"
+                    class="pl-10 w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-primary outline-none"
+                  />
+                </div>
+              </div>
 
-        <div>
-          <label class="block font-medium mb-1">{{ $t('contact.email') }}</label>
-          <input
-            v-model="form.email"
-            required
-            type="email"
-            :placeholder="$t('contact.placeholderEmail')"
-            class="w-full rounded-md border-gray-300 p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
-          />
-        </div>
+              <!-- Email -->
+              <div>
+                <label class="block text-gray-700 font-semibold mb-1"
+                  >Mail</label
+                >
+                <div class="relative">
+                  <i
+                    class="fas fa-envelope absolute top-3.5 left-4 text-gray-400"
+                  ></i>
+                  <input
+                    v-model="form.email"
+                    type="email"
+                    required
+                    placeholder="your@email.com"
+                    class="pl-10 w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-primary outline-none"
+                  />
+                </div>
+              </div>
+            </div>
 
-        <div>
-          <label class="block font-medium mb-1">{{ $t('contact.message') }}</label>
-          <textarea
-            v-model="form.message"
-            required
-            rows="4"
-            :placeholder="$t('contact.placeholderMessage')"
-            class="w-full rounded-md border-gray-300 p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
-          ></textarea>
-        </div>
+            <!-- Phone -->
+            <!-- <div>
+              <label class="block text-gray-700 font-semibold mb-1">Phone</label>
+              <div class="relative">
+                <i
+                  class="fas fa-phone absolute top-3.5 left-4 text-gray-400"
+                ></i>
+                <input
+                  v-model="form.phone"
+                  type="text"
+                  placeholder="+20 123456789"
+                  class="pl-10 w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-primary outline-none"
+                />
+              </div>
+            </div> -->
 
-        <button
-          type="submit"
-          class="bg-primary hover:bg-blue-800 text-white font-medium py-3 rounded-md w-full flex justify-center items-center gap-2 transition duration-200"
-        >
-          <span v-if="!loading">{{ $t('contact.send') }}</span>
-          <span v-else>
-            <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 24 24">
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
-                stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor"
-                d="M4 12a8 8 0 018-8v8z"></path>
-            </svg>
-          </span>
-        </button>
+            <!-- Message -->
+            <div>
+              <label class="block text-gray-700 font-semibold mb-1">
+                Message
+              </label>
+              <textarea
+                v-model="form.message"
+                rows="5"
+                required
+                placeholder="Write your message here..."
+                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-primary outline-none"
+              ></textarea>
+            </div>
+          </div>
 
-        <p v-if="success" class="text-green-600 font-semibold text-center mt-2">{{ $t('contact.success') }}</p>
-      </form>
+          <button
+            type="submit"
+            class="mt-6 w-60 mx-auto bg-primary flex items-center justify-center text-white font-bold py-3 rounded-lg hover:bg-primary transition transform hover:scale-105"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { useI18n } from 'vue-i18n'
-
-const { locale, t } = useI18n()
+import { ref } from "vue";
 
 const form = ref({
-  name: '',
-  email: '',
-  message: ''
-})
+  name: "",
+  email: "",
+  phone: "",
+  message: "",
+});
 
-const loading = ref(false)
-const success = ref(false)
-
-const submitForm = async () => {
-  loading.value = true
-  success.value = false
-
-  try {
-    await fetch('https://formsubmit.co/ajax/sherifbrooklyn@gmail.com', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify(form.value)
-    })
-
-    form.value = { name: '', email: '', message: '' }
-    success.value = true
-  } catch (err) {
-    alert(t('contact.sendFail'))
-  } finally {
-    loading.value = false
-  }
+function submitForm() {
+  alert("Form submitted!");
+  form.value = {
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  };
 }
 </script>
 
-<style scoped>
-.bg-primary {
-  background-color: #1e3a8a;
-}
-.text-primary {
-  color: #1e3a8a;
-}
-</style>
-
 <style>
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
 </style>

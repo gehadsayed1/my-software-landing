@@ -1,6 +1,6 @@
 <template>
   <section class="py-20 bg-blue-50">
-    <div class="container mx-auto px-6 md:px-12">
+    <div class="container mx-auto px-6  md:px-12">
       <!-- العنوان -->
       <div class="text-center mb-16">
         <h2 class="text-4xl font-bold text-primary mb-4">{{ $t('whyUs.title') }}</h2>
@@ -9,53 +9,67 @@
         </p>
       </div>
 
-      <!-- العناصر -->
-      <div class="grid md:grid-cols-3 gap-10">
-        <!-- item 1 -->
-        <div class="bg-white p-8 rounded-full shadow-md text-center" data-aos="flip-right">
-          <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <!-- Icon -->
-          </div>
-          <h3 class="text-2xl font-semibold text-gray-800 mb-4">
-            {{ $t('whyUs.items.quality.title') }}
-          </h3>
-          <p class="text-gray-600 leading-relaxed">
-            {{ $t('whyUs.items.quality.desc') }}
-          </p>
-        </div>
+      <!-- الدوائر -->
+      <div class="flex flex-wrap justify-center gap-15 ">
+        <div
+          v-for="(item, index) in items"
+          :key="index"
+          class="relative group w-90 h-90 rounded-full overflow-hidden shadow-xl transform transition-all duration-300 hover:scale-110 hover:shadow-2xl"
+          data-aos="fade-up"
+        >
+          <!-- الخلفية -->
+          <div class="absolute inset-0 bg-gradient-to-br from-white to-gray-100"></div>
 
-        <!-- item 2 -->
-        <div class="bg-white p-8 rounded-full shadow-md text-center" data-aos="flip-right">
-          <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <!-- Icon -->
-          </div>
-          <h3 class="text-2xl font-semibold text-gray-800 mb-4">
-            {{ $t('whyUs.items.timely.title') }}
-          </h3>
-          <p class="text-gray-600 leading-relaxed">
-            {{ $t('whyUs.items.timely.desc') }}
-          </p>
-        </div>
+          <!-- الدائرة الداخلية -->
+          <div class="absolute inset-8 rounded-full border-4 border-dashed border-indigo-300 animate-pulse"></div>
 
-        <!-- item 3 -->
-        <div class="bg-white p-8 rounded-full shadow-md text-center" data-aos="flip-right">
-          <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <!-- Icon -->
+          <!-- الأيقونة -->
+          <div class="absolute inset-0 flex flex-col items-center justify-center p-6">
+            <div  class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-md mb-6 transform transition-transform duration-300 group-hover:rotate-12">
+              <component :is="item.icon" :class="item.bgColor"  size="28" />
+
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-800 mb-3">
+              {{ $t(item.title) }}
+            </h3>
+            <p class="text-sm text-gray-600 text-center leading-relaxed">
+              {{ $t(item.desc) }}
+            </p>
           </div>
-          <h3 class="text-2xl font-semibold text-gray-800 mb-4">
-            {{ $t('whyUs.items.learning.title') }}
-          </h3>
-          <p class="text-gray-600 leading-relaxed">
-            {{ $t('whyUs.items.learning.desc') }}
-          </p>
         </div>
       </div>
     </div>
   </section>
 </template>
-<script setup>
 
+<script setup>
 import { useI18n } from 'vue-i18n'
+import { Activity, Clock, BookOpen } from 'lucide-vue-next';
 
 const { t } = useI18n()
+
+const items = [
+  {
+    title: 'whyUs.items.quality.title',
+    desc: 'whyUs.items.quality.desc',
+    icon:Activity,
+    bgColor: 'text-blue-500',
+    aos: 'fade-up',
+  },
+  {
+    title: 'whyUs.items.timely.title',
+    desc: 'whyUs.items.timely.desc',
+    icon: Clock,
+    bgColor: 'text-green-500',
+    aos: 'fade-up',
+  },
+  {
+    title: 'whyUs.items.learning.title',
+    desc: 'whyUs.items.learning.desc',
+    icon: BookOpen,
+    bgColor: 'text-purple-500',
+    aos: 'fade-up',
+  },
+]
 </script>
