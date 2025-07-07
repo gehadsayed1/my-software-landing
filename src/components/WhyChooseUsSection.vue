@@ -15,7 +15,7 @@
           <!-- Quality -->
           <div
           data-aos="flip-right"
-            class="bg-white p-8 rounded-full shadow-md hover:shadow-xl transition duration-300 transform hover:rotate-3 text-center"
+            class="bg-white p-15 rounded-full shadow-md hover:shadow-xl transition duration-300 transform hover:rotate-3 text-center"
           >
             <div
               class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6"

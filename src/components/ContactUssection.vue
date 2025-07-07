@@ -2,7 +2,7 @@
   <section data-aos="zoom-out-left"  class="contact-section bg-gray-3\200 py-12 px-0  md:px-6   justify-between rounded shadow-lg flex flex-col md:flex-row items-center md:items-start gap-12">
     
  <!-- component -->
-<div class="flex justify-center items-center   bg-white">
+<div class="flex justify-center items-center   ">
 	<!-- COMPONENT CODE -->
 	<div class="container mx-auto my-4 px-4 lg:px-20">
 

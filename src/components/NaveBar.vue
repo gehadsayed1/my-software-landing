@@ -17,16 +17,17 @@
       <li>
         <a href="#home" class="nav-link block md:inline-block p-4 hover:text-blue-600">Home</a>
       </li>
-      <li>
-        <a href="#projects" class="nav-link block md:inline-block p-4 hover:text-blue-600">Products</a>
-      </li>
-      <li>
+      <li><a href="#about" class="nav-link block md:inline-block p-4 hover:text-blue-600">About Us</a></li>
+<li>
         <a href="#solutions" class="nav-link block md:inline-block p-4 hover:text-blue-600">Solutions</a>
       </li>
       <li>
+        <a href="#projects" class="nav-link block md:inline-block p-4 hover:text-blue-600">Products</a>
+      </li>
+      
+      <li>
         <a href="#team" class="nav-link block md:inline-block p-4 hover:text-blue-600">Team</a>
       </li>
-      <li><a href="#about" class="nav-link block md:inline-block p-4 hover:text-blue-600">About Us</a></li>
       <li><a href="#contact" class="nav-link block md:inline-block p-4 hover:text-blue-600">Contact Us</a></li>
     </ul>
   </nav>
