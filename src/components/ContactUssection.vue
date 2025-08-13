@@ -1,48 +1,58 @@
 <template>
-  <section class="bg-orange-50 py-20">
+  <section class="bg-gray-50 py-20">
     <div class="container mx-auto px-6">
       <!-- Title -->
       <div class="text-center mb-12">
-        <h2 class="text-4xl font-extrabold text-indigo-900 mb-4">
-          Get in touch!
-        </h2>
+        <h2 class="text-4xl font-extrabold text-primary mb-4">Get in touch!</h2>
         <p class="text-gray-600 text-lg">
           Contact us for a quote, help or to join the team.
         </p>
       </div>
 
       <!-- Contact Info -->
-      <div
-        class="flex flex-col md:flex-row justify-center items-center gap-6 mb-14"
-      >
-        <div
-          class="flex flex-col items-center text-center p-6 rounded-xl bg-white shadow hover:shadow-lg transition"
+      <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-14">
+        <!-- Location Card -->
+        <a
+          href="https://www.google.com/maps?q=Dubai,+Deira,+Port+Said,+Golden+Business+Centre"
+          target="_blank"
+          class="flex flex-col items-center text-center p-3 rounded-xl bg-white shadow hover:shadow-lg transition cursor-pointer w-full md:w-[200px] h-[120px] justify-center border-2 border-primary"
         >
-          <div class="text-primary text-2xl mb-2">
+          <div class="text-primary text-lg mb-1">
             <i class="fas fa-map-marker-alt"></i>
           </div>
-          <p class="text-gray-800">102 Street 2714 Don</p>
-        </div>
-        <div
-          class="flex flex-col items-center text-center p-6 rounded-xl bg-white shadow-lg border-2 border-primary"
+          <p class="text-gray-800 hover:text-primary transition text-sm">
+            Dubai, Golden Centre
+          </p>
+        </a>
+
+        <!-- Phone Card -->
+        <a
+          href="tel:0567844965"
+          class="flex flex-col items-center text-center p-3 rounded-xl bg-white shadow hover:shadow-lg transition cursor-pointer w-full md:w-[200px] h-[120px] justify-center border-2 border-primary"
         >
-          <div class="text-primary text-2xl mb-2">
+          <div class="text-primary text-lg mb-1">
             <i class="fas fa-phone-alt"></i>
           </div>
-          <p class="text-gray-800 cursor-pointer">+02 1234 567</p>
-        </div>
-        <div
-          class="flex flex-col items-center text-center p-6 rounded-xl bg-white shadow hover:shadow-lg transition"
+          <p class="text-gray-800 hover:text-primary transition text-sm">0567844965</p>
+        </a>
+
+        <!-- Email Card -->
+        <a
+          :href="`https://mail.google.com/mail/?view=cm&fs=1&to=sherifbrooklyn@gmail.com&su=Contact Request`"
+          target="_blank"
+          class="flex flex-col items-center text-center p-3 rounded-xl bg-white shadow hover:shadow-lg transition cursor-pointer w-full md:w-[200px] h-[120px] justify-center border-2 border-primary"
         >
-          <div class="text-primary text-2xl mb-2">
+          <div class="text-primary text-lg mb-1">
             <i class="fas fa-envelope"></i>
           </div>
-          <p class="text-gray-800">hello@flowbase.com</p>
-        </div>
+          <p class="text-gray-800 hover:text-primary transition text-sm">
+            sherifbrooklyn@gmail.com
+          </p>
+        </a>
       </div>
 
       <!-- Contact Form -->
-      <div class="max-w-4xl mx-auto bg-white rounded-2xl p-8">
+      <div class="max-w-4xl mx-auto rounded-2xl px-8">
         <form @submit.prevent="submitForm">
           <div class=" ">
             <div class="grid md:grid-cols-2 gap-6">
@@ -53,7 +63,7 @@
                 >
                 <div class="relative">
                   <i
-                    class="fas fa-user absolute top-3.5 left-4 text-gray-400"
+                    class="fas fa-user absolute top-4 left-4 text-gray-400"
                   ></i>
                   <input
                     v-model="form.name"
@@ -72,7 +82,7 @@
                 >
                 <div class="relative">
                   <i
-                    class="fas fa-envelope absolute top-3.5 left-4 text-gray-400"
+                    class="fas fa-envelope absolute top-4.5 left-4 text-gray-400"
                   ></i>
                   <input
                     v-model="form.email"

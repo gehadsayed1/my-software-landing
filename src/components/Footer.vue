@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-gray-900 text-white py-10 px-6">
+  <footer class="bg-gray-900 text-white pt-10  px-6">
     <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
       
       <!-- Company Info -->
@@ -42,7 +42,7 @@
       </div>
     </div>
 
-    <div class="text-center text-gray-500 text-sm mt-10 border-t border-gray-700 pt-6">
+    <div class="text-center pb-5 text-gray-500 text-sm mt-10 border-t flex items-center justify-center border-gray-700 pt-3">
       &copy; 2025 AI Brooklyn. {{ $t('footer.rights') }}
     </div>
   </footer>

@@ -1,7 +1,7 @@
 <template>
   <section class="py-20 bg-blue-50">
     <div class="container mx-auto px-6  md:px-12">
-      <!-- العنوان -->
+
       <div class="text-center mb-16">
         <h2 class="text-4xl font-bold text-primary mb-4">{{ $t('whyUs.title') }}</h2>
         <p class="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -9,7 +9,7 @@
         </p>
       </div>
 
-      <!-- الدوائر -->
+     
       <div class="flex flex-wrap justify-center gap-15 ">
         <div
           v-for="(item, index) in items"
@@ -21,7 +21,7 @@
           <div class="absolute inset-0 bg-gradient-to-br from-white to-gray-100"></div>
 
           <!-- الدائرة الداخلية -->
-          <div class="absolute inset-8 rounded-full border-4 border-dashed border-indigo-300 animate-pulse"></div>
+          <!-- <div class="absolute inset-8 rounded-full border-4 border-dashed border-indigo-300 animate-pulse"></div> -->
 
           <!-- الأيقونة -->
           <div class="absolute inset-0 flex flex-col items-center justify-center p-6">
